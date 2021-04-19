@@ -1,4 +1,4 @@
-pragma solidity ^0.4.19;
+pragma solidity >=0.4.22 <0.8.0;
 
 contract ZombieFactory {
 
@@ -17,7 +17,7 @@ contract ZombieFactory {
     function _createZombie(string _name, uint _dna) private {
         uint id = zombies.push(Zombie(_name, _dna)) - 1;
         NewZombie(id, _name, _dna);
-    } 
+    }
 
     function _generateRandomDna(string _str) private view returns (uint) {
         uint rand = uint(keccak256(_str));
@@ -30,4 +30,3 @@ contract ZombieFactory {
     }
 
 }
-
